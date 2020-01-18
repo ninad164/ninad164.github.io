@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic Info</title>
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="main.js"></script>
+        <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">        
+
+    </head>
+    <body>
+
+
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="cyberally.html">
+              <img src="assets/CollegeAlly.png" alt="logo" style="width:32px; height: 35x; margin-top: -10px;">
+            </a>
+            <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link py-0" href="cyberally.html"><h3 style="margin-top: 0px;">CYBER ALLY</h3></a>
+              </li>
+            </ul>
+            
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link py-0" href="#">About</a>
+              </li>
+              <span class="line"></span>
+              <li class="nav-item active">
+                <a class="nav-link py-0" href="#">FAQs</a>
+              </li>
+              <span class="line"></span>
+              <li class="nav-item active">
+                <a class="nav-link py-0" href="#">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+
+
+
+          <div class="box">
+            <div>
+                  <p><b>On whose behalf are you reporting?</b></p>
+                  <label for="inlineFormCustomSelect" style="display: none;">Preference</label>
+                  <select class="apna-slt" id="inlineFormCustomSelect">
+                    <option selected>Yourself</option>
+                    <option value="1">Relative</option>
+                    <option value="2">Friend</option>
+                    <option value="3">Others</option>
+                  </select>  
+            </div>
+            
+            
+            <div>
+                <p><b>On which of the following social media did you find the images?</b></p>
+                <div class="apna-radio">
+                    <div>
+                        <input type="checkbox" id="rad1" class="radi" value="twitter">
+                        <label for="rad1">Twitter</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="rad2" class="radi" value="facebook">
+                        <label for="rad2">Facebook</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="rad3" class="radi" value="instagram">
+                        <label for="rad3">Instagram</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="rad4" class="radi" value="reddit">
+                        <label for="rad4">Reddit</label>
+                    </div>
+                </div>
+
+           
+          
+          </div>
+          <a href="solution.html"><button type="button" onclick="submitIt()" class="btn btn-primary apna-btn">Submit</button></a>
+        </div>
+
+        <script>
+            let rads = document.getElementsByClassName('radi');
+            console.log(rads);
+            
+            function submitIt() {
+                    let rads = document.getElementsByClassName('radi');
+                    for(var i = 0; i < rads.length; i++) {
+                        if(rads[i].checked) {
+                            localStorage.setItem(rads[i].value, "checked");
+                        }
+                        else {
+                            localStorage.removeItem(rads[i].value);
+                        }
+                    }
+                
+            }
+        </script>
+
+          
+        </body>
+        </html>
